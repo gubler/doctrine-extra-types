@@ -1,0 +1,49 @@
+{
+    "name": "gubler/doctrine-extra-types",
+    "description": "Adds extra and alternate Doctrine column types",
+    "type": "library",
+    "keywords": [
+        "uuid",
+        "identifier",
+        "guid",
+        "doctrine",
+        "utc"
+    ],
+    "homepage": "https://github.com/gubler/doctrine-extra-types",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daryl Gubler",
+            "email": "daryl@dev88.co",
+            "homepage": "http://dev88.co"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gubler/doctrine-extra-types/issues",
+        "source": "https://github.com/gubler/doctrine-extra-types"
+    },
+    "require": {
+        "php": "^7.0",
+        "doctrine/orm": "^2.5",
+        "ramsey/uuid": "^3.0"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^0.9.0",
+        "phpunit/phpunit": "^4.7 || ^5.0",
+        "satooshi/php-coveralls": "^0.6.1",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {"Gubler\\DoctrineExtraTypes\\": "src/"}
+    },
+    "scripts": {
+       "lint": "parallel-lint src tests",
+       "phpunit": "phpunit --verbose --colors=always",
+       "phpcs": "phpcs src tests --standard=psr2 -sp --colors",
+       "test": [
+            "@lint",
+            "@phpunit",
+            "@phpcs"
+       ]
+    }
+}
